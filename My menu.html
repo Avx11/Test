@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#F7AB0A',secondary:'#F97316'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFDF7;
+        }
+        .search-input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Nav Bar -->
+    <nav class="fixed top-0 w-full bg-white shadow-sm z-50 px-4 py-3">
+        <div class="flex items-center justify-between">
+            <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-menu-line ri-lg"></i>
+            </div>
+            <div class="text-xl font-['Pacifico'] text-primary">logo</div>
+            <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-search-line ri-lg"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="mt-16 px-4 py-3">
+        <div class="relative">
+            <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                <div class="w-5 h-5 flex items-center justify-center">
+                    <i class="ri-search-line text-gray-400"></i>
+                </div>
+            </div>
+            <input type="text" class="search-input w-full py-2.5 pl-10 pr-3 bg-gray-100 rounded-full text-sm" placeholder="Search for food, drinks, etc.">
+        </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="px-4 mt-4">
+        <div class="text-lg font-semibold mb-3">Categories</div>
+        <div class="grid grid-cols-4 gap-3">
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full overflow-hidden bg-orange-100 flex items-center justify-center">
+                    <img src="https://public.readdy.ai/ai/img_res/05a6ef154bda6e66911499140aaf412d.jpg" alt="Pizza" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xs mt-1 whitespace-nowrap overflow-hidden text-overflow-ellipsis">Pizza</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full overflow-hidden bg-green-100 flex items-center justify-center">
+                    <img src="https://public.readdy.ai/ai/img_res/fcb2693190c4667c5e210f31e03357d1.jpg" alt="Salad" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xs mt-1 whitespace-nowrap overflow-hidden text-overflow-ellipsis">Salad</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full overflow-hidden bg-red-100 flex items-center justify-center">
+                    <img src="https://public.readdy.ai/ai/img_res/1d58e4791bf0991e92bb4ab0b9fcdfee.jpg" alt="Burger" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xs mt-1 whitespace-nowrap overflow-hidden text-overflow-ellipsis">Burger</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full overflow-hidden bg-yellow-100 flex items-center justify-center">
+                    <img src="https://public.readdy.ai/ai/img_res/5b913b0ee7ad8756c2a2e03df0d3daeb.jpg" alt="Drinks" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xs mt-1 whitespace-nowrap overflow-hidden text-overflow-ellipsis">Drinks</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Items -->
+    <div class="px-4 mt-6">
+        <div class="flex justify-between items-center mb-3">
+            <div class="text-lg font-semibold">Popular Items</div>
+            <div class="text-sm text-primary">See all</div>
+        </div>
+        
+        <div class="overflow-x-auto pb-4 -mx-4 px-4">
+            <div class="flex space-x-4" style="width: max-content;">
+                <div class="w-40 rounded-lg overflow-hidden shadow-sm bg-white">
+                    <div class="h-36 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/086cb3981f9ba1e55e0a2c0752eb0b5a.jpg" alt="Pizza" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-2">
+                        <div class="text-sm font-medium">Pepperoni Pizza</div>
+                        <div class="flex justify-between items-center mt-1">
+                            <div class="text-xs text-gray-500">Italian Kitchen</div>
+                            <div class="text-xs bg-primary/10 text-primary px-1.5 py-0.5 rounded-full">4.8 ★</div>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <div class="text-sm font-semibold">$12.99</div>
+                            <button class="w-6 h-6 bg-primary !rounded-button flex items-center justify-center cursor-pointer">
+                                <i class="ri-add-line text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-40 rounded-lg overflow-hidden shadow-sm bg-white">
+                    <div class="h-36 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/389257b5249e775fef25a11e56fcf215.jpg" alt="Salad" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-2">
+                        <div class="text-sm font-medium">Caesar Salad</div>
+                        <div class="flex justify-between items-center mt-1">
+                            <div class="text-xs text-gray-500">Green Garden</div>
+                            <div class="text-xs bg-primary/10 text-primary px-1.5 py-0.5 rounded-full">4.6 ★</div>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <div class="text-sm font-semibold">$9.50</div>
+                            <button class="w-6 h-6 bg-primary !rounded-button flex items-center justify-center cursor-pointer">
+                                <i class="ri-add-line text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-40 rounded-lg overflow-hidden shadow-sm bg-white">
+                    <div class="h-36 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/1e3bb74f8ac7164dbd9bd931f4bb8770.jpg" alt="Burger" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-2">
+                        <div class="text-sm font-medium">Classic Burger</div>
+                        <div class="flex justify-between items-center mt-1">
+                            <div class="text-xs text-gray-500">Burger House</div>
+                            <div class="text-xs bg-primary/10 text-primary px-1.5 py-0.5 rounded-full">4.7 ★</div>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <div class="text-sm font-semibold">$10.99</div>
+                            <button class="w-6 h-6 bg-primary !rounded-button flex items-center justify-center cursor-pointer">
+                                <i class="ri-add-line text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Items -->
+    <div class="px-4 mt-4 mb-24">
+        <div class="text-lg font-semibold mb-3">Featured Menu</div>
+        
+        <div class="space-y-3">
+            <div class="flex bg-white rounded-lg overflow-hidden shadow-sm p-3">
+                <div class="w-24 h-24 rounded-lg overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/f45ef8fbf3412ecd54c360e1c5de4068.jpg" alt="Hot Pizza" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="ml-3 flex-1">
+                    <div class="text-sm font-medium">HOT PIZZA</div>
+                    <div class="text-xs text-gray-500 mt-1">Pepperoni, cheese, tomato sauce</div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="text-sm font-semibold">$12.99</div>
+                        <button class="px-3 py-1.5 bg-primary text-white text-xs font-medium !rounded-button cursor-pointer">
+                            ADD TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex bg-white rounded-lg overflow-hidden shadow-sm p-3">
+                <div class="w-24 h-24 rounded-lg overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/8e44b86d79a09c83b3f8b9d103f6d49b.jpg" alt="Salad" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="ml-3 flex-1">
+                    <div class="text-sm font-medium">SALADS</div>
+                    <div class="text-xs text-gray-500 mt-1">Fresh greens, chicken, avocado</div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="text-sm font-semibold">$9.50</div>
+                        <button class="px-3 py-1.5 bg-primary text-white text-xs font-medium !rounded-button cursor-pointer">
+                            ADD TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex bg-white rounded-lg overflow-hidden shadow-sm p-3">
+                <div class="w-24 h-24 rounded-lg overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/9aad1de10adbc2372bd31c9736337635.jpg" alt="Dessert" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="ml-3 flex-1">
+                    <div class="text-sm font-medium">DESSERT</div>
+                    <div class="text-xs text-gray-500 mt-1">Chocolate cake, berries, mint</div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="text-sm font-semibold">$7.99</div>
+                        <button class="px-3 py-1.5 bg-primary text-white text-xs font-medium !rounded-button cursor-pointer">
+                            ADD TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex bg-white rounded-lg overflow-hidden shadow-sm p-3">
+                <div class="w-24 h-24 rounded-lg overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/a099a524a94ff7628a103f998b9ba842.jpg" alt="Drinks" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="ml-3 flex-1">
+                    <div class="text-sm font-medium">DRINKS</div>
+                    <div class="text-xs text-gray-500 mt-1">Refreshing lime, mint, soda</div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="text-sm font-semibold">$4.50</div>
+                        <button class="px-3 py-1.5 bg-primary text-white text-xs font-medium !rounded-button cursor-pointer">
+                            ADD TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Bar -->
+    <div class="fixed bottom-0 w-full bg-white shadow-[0_-2px_10px_rgba(0,0,0,0.05)] z-50">
+        <div class="grid grid-cols-4 h-16">
+            <div class="flex flex-col items-center justify-center cursor-pointer">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-home-5-fill text-primary ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1 text-primary">Home</span>
+            </div>
+            <div class="flex flex-col items-center justify-center cursor-pointer">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-search-line text-gray-400 ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1 text-gray-400">Search</span>
+            </div>
+            <div class="flex flex-col items-center justify-center cursor-pointer">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-shopping-cart-line text-gray-400 ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1 text-gray-400">Cart</span>
+            </div>
+            <div class="flex flex-col items-center justify-center cursor-pointer">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-user-line text-gray-400 ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1 text-gray-400">Profile</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-20 right-4 w-12 h-12 bg-primary rounded-full shadow-lg flex items-center justify-center cursor-pointer">
+        <i class="ri-shopping-cart-fill text-white ri-xl"></i>
+    </div>
+</body>
+</html>
